@@ -10,7 +10,7 @@ IndigoTransitions is a responsive animation library designed to enhance user int
 - Demo and Documentation: Comprehensive documentation and an interactive demo page showcase each animation, providing code snippets for quick reference and implementation.
 
 ## Get Started:
-\
+
 IndigoTransitions is perfect for developers looking to add a touch of elegance to their projects without sacrificing performance. Whether you’re building a personal portfolio, an e-commerce site, or a web application, this library offers the tools you need to create captivating user experiences.
 
 Join us in making the web a more dynamic place with IndigoTransitions!
