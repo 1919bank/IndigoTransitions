@@ -51,9 +51,21 @@
     document.querySelectorAll('.demo-box').forEach(box => {
         box.addEventListener('click', () => {
             box.style.animation = 'none';
-            setTimeout(() => {
-                box.style.animation = '';
-            }, 10);
+            box.offsetHeight; // Trigger reflow to restart animation
+            box.style.animation = '';
+        });
+    });
+
+    // Adding hover effect to show animation name
+    document.querySelectorAll('.demo-box').forEach(box => {
+        box.addEventListener('mouseenter', () => {
+            box.style.opacity = '0.8';
+            box.textContent = box.classList[1].replace('-', ' ').toUpperCase();
+        });
+
+        box.addEventListener('mouseleave', () => {
+            box.style.opacity = '1';
+            box.textContent = box.classList[1].replace('-', ' ').split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
         });
     });
 </script>
