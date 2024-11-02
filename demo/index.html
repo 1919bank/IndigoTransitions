@@ -26,6 +26,18 @@
             cursor: pointer;
             text-align: center;
             border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .demo-box:hover {
+            transform: scale(1.1);
+        }
+
+        .demo-description {
+            width: 100%;
+            margin-top: 30px;
+            font-size: 1.2rem;
+            text-align: center;
         }
     </style>
 </head>
@@ -46,6 +58,7 @@
     <div class="demo-box shake">Shake</div>
     <div class="demo-box wobble">Wobble</div>
 </div>
+<div class="demo-description" id="demo-description">Hover over or click on an animation box to see the effect.</div>
 <script>
     // Adding event listener to restart animations when clicked
     document.querySelectorAll('.demo-box').forEach(box => {
@@ -56,18 +69,21 @@
         });
     });
 
-    // Adding hover effect to show animation name
+    // Adding hover effect to show animation name and description
     document.querySelectorAll('.demo-box').forEach(box => {
         box.addEventListener('mouseenter', () => {
             box.style.opacity = '0.8';
             box.textContent = box.classList[1].replace('-', ' ').toUpperCase();
+            document.getElementById('demo-description').textContent = `This is the "${box.classList[1].replace('-', ' ')}" animation.`;
         });
 
         box.addEventListener('mouseleave', () => {
             box.style.opacity = '1';
             box.textContent = box.classList[1].replace('-', ' ').split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+            document.getElementById('demo-description').textContent = 'Hover over or click on an animation box to see the effect.';
         });
     });
 </script>
 </body>
 </html>
+
